@@ -1,0 +1,365 @@
+<html class="themeLight">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
+        integrity=
+"sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww=="
+        crossorigin="anonymous">
+    </script>
+        <title>
+            Origami
+        </title>
+        <link rel="icon" href="The-Japanese-Art-of-Origami.ico" type="image/icon type">
+        <style>
+            .themeLight {
+                --color-primary: #ff0000;
+                --color-secondary: #eeeeee;
+                --color-accent: #00ff00;
+                --font-color: #111111;
+                --bgicon-color: rgba(0,0,0,0.2);
+                --highlight-color: #5200d0;
+                --navbar-light: visible;
+                --navbar-dark: hidden;
+                
+            }
+            .themeDark {
+                --color-primary: aqua;
+                --color-secondary: #111111;
+                --color-accent: fuchsia;
+                --font-color: #eeeeee;
+                --bgicon-color: rgba(255,255,255,0.3);
+                --highlight-color: #adff2f;
+                --navbar-light: hidden;
+                --navbar-dark: visible;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                background-color: var(--color-secondary);
+                position: relative;
+            }
+            section {
+                margin-top: 5%;
+            }
+            h1 {
+                font-family: 'Mali', cursive;
+                font-size: 120px;
+                color: var(--font-color);
+            }
+            p {
+                font-size: 48px;
+                font-family: 'Satisfy', cursive;
+                color: var(--font-color);
+              }
+            a {
+                color: orangered;
+            }
+            .rm {
+                color: var(--color-accent);
+            }
+            .rm:hover {
+                color: var(--color-accent);
+            }
+            .start {
+                font-size: 64px;
+                color: var(--color-primary);
+            }
+            img {
+                width: 500px;
+                height: 335px;
+                transition: transform.2s;
+                cursor: pointer;
+                margin: 1%;
+            }
+            img:hover {
+                transform: scale(0.90);
+            }
+            .contact {
+                font-family: 'Roboto Mono', monospace;
+                font-size: 36px;
+                color: var(--font-color);
+                text-decoration-line: none;
+            }
+            .material-icons-outlined {
+                float: right;
+                font-family: 'Material Icons Outlined';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 28px;
+                display: inline-block;
+                line-height: 1;
+                text-transform: none;
+                letter-spacing: normal;
+                word-wrap: normal;
+                white-space: nowrap;
+                direction: ltr;
+                color: var(--font-color);
+                cursor: pointer;
+                height: 36px;
+                width: 36px;
+                border-radius: 100px;
+                text-align: center;
+                vertical-align: middle;
+                align-content: center;
+                justify-content: center;
+            }
+            .material-icons-outlined:hover {
+                background-color: var(--bgicon-color);
+            }
+            #darkIcon {
+                margin-right: -36px;
+            }
+            #lightIcon {
+                visibility: hidden;
+            }
+            #goslide {
+                background-color: var(--font-color);
+            }
+            #nav-light {
+                visibility: var(--navbar-light);
+            }
+            #nav-dark {
+                visibility: var(--navbar-dark);
+            }
+            mark.a0 {
+                color: var(--color-secondary);
+                padding: 5px;
+                background: var(--highlight-color);
+            }
+            .disabled {
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+            }
+            #makeH {
+                margin-right: 2%;
+            }
+            #cancelH {
+                margin-right: 2%;
+            }
+        </style>
+    </head>
+    <script>
+        (function(w, d) 
+         { w.CollectId = "61c5d2a5b104f43d8bab2372"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); }
+        )(window, document);
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+        function changeTheme() {
+            if (localStorage.getItem('theme') === 'themeDark') {
+                setTheme('themeLight');
+                document.getElementById("lightIcon").style.visibility = "hidden";
+                document.getElementById("darkIcon").style.visibility = "visible";
+                document.getElementById("navChange").className = "navbar navbar-expand-sm bg-light navbar-light fixed-top";
+            } else {
+                setTheme('themeDark');
+                document.getElementById("darkIcon").style.visibility = "hidden";
+                document.getElementById("lightIcon").style.visibility = "visible";
+                document.getElementById("navChange").className = "navbar navbar-expand-sm bg-dark navbar-dark fixed-top";
+            }
+        }
+        (function setTheme() {
+            if (localStorage.getItem('theme') === 'themeDark') {
+                setTheme('themeLight');
+                document.getElementById("lightIcon").style.visibility = "hidden";
+                document.getElementById("darkIcon").style.visibility = "visible";
+                document.getElementById("navChange").className = "navbar navbar-expand-sm bg-light navbar-light fixed-top";
+            } else {
+                setTheme('themeLight');
+                document.getElementById("lightIcon").style.visibility = "hidden";
+                document.getElementById("darkIcon").style.visibility = "visible";
+                document.getElementById("navChange").className = "navbar navbar-expand-sm bg-dark navbar-dark fixed-top";
+            }
+        })();
+    </script>
+    <script>
+        function highlight(param) {
+            var ob = new Mark(document.querySelector(".select"));
+            ob.unmark();
+            ob.mark(
+                document.getElementById("searched").value,
+                { className: 'a' + param }
+            );
+        }
+    </script>
+    <script>
+        function unhighlight() {
+            var ob = new Mark(document.querySelector(".select"));
+            ob.unmark();
+        }
+    </script>
+    <body class="disabled" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+        <nav id="navChange" class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Origami</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#intro">Introduction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#vid">Videos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+      <form id="abcd" class="d-flex">
+            <input type="text" id="searched" class="form-control me-2" type="text" placeholder="Search something" name="searched" >
+        <button id="makeH" onclick="highlight('0');" class="btn btn-primary" type="button" data-bs-toggle="tooltip" title="Search Something">Search</button>
+          <button id="cancelH" onclick="unhighlight();" class="btn btn-danger" type="button" data-bs-toggle="tooltip" title="Stop Searching">Cancel</button>
+      </form>
+        <div class="sideS">
+        </div>
+    </div>
+  </div>
+</nav>
+        
+        <div class="select" style="margin-top: 80px;">
+        <span class="material-icons-outlined" id="lightIcon" onclick="changeTheme()">light_mode</span>
+      <span class="material-icons-outlined" id="darkIcon" onclick="changeTheme()">dark_mode</span>
+        <center>
+            <h1 class="page-header">
+                <u>
+                    Origami
+                </u>
+            </h1>
+        </center>
+        <section id="intro">
+            <div>
+                <center>
+                    <span>
+                        <p class="start">Introduction- </p>
+            <p>Origami (折り紙, Japanese pronunciation: [oɾiɡami] or [oɾiꜜɡami], from ori meaning "folding", and kami meaning "paper" (kami changes to gami due to rendaku)) is the art of paper folding, which is often associated with Japanese culture. In modern usage, the word "origami" is used as an inclusive term for all folding practices, regardless of their culture of origin. The goal is to transform a flat square sheet of paper into a finished sculpture through folding and sculpting techniques. Modern origami practitioners generally discourage the use of cuts, glue, or markings on the paper. Origami folders often use the Japanese word kirigami to refer to designs which use cuts.<br><br>
+
+The small number of basic origami folds can be combined in a variety of ways to make intricate designs. The best-known origami model is the Japanese paper crane. In general, these designs begin with a square sheet of paper whose sides may be of different colors, prints, or patterns. Traditional Japanese origami, which has been practiced since the Edo period (1603–1867), has often been less strict about these conventions, sometimes cutting the paper or using nonsquare shapes to start with. The principles of origami are also used in stents, packaging, and other engineering applications. <a class="rm" href="https://en.wikipedia.org/wiki/Origami" target="_blank" rel="noopener noreferrer">Read More...</a>
+            </p>
+                    </span>
+                </center>
+            </div>
+        </section>
+        <section id="vid">
+            <div>
+                <center>
+                    <span>
+                        <p class="start">Videos- </p>
+                        <div id="watch" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="0" class="active"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="1"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="2"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="3"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="4"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="5"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="6"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="7"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="8"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="9"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="10"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="11"></button>
+                                <button id="goslide" type="button" data-bs-target="#watch" data-bs-slide-to="12"></button>                           
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"> <iframe width="90%" height="100%" src="https://www.youtube.com/embed/KfnyopxdJXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p><a class="rm" href="https://www.youtube.com/watch?v=KfnyopxdJXQ" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/6QqBvy_yO_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=6QqBvy_yO_M" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>                           
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/mPVefDuGRkA?list=PLBuR_wjBZR352J5CDO1wyn1E5p9bY1jql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=mPVefDuGRkA?list=PLBuR_wjBZR352J5CDO1wyn1E5p9bY1jql" target="_blank" rel="noopener noreferrer" >Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/CDmFddQdFAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=CDmFddQdFAw" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/-bP8IPpWWY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=-bP8IPpWWY8" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/qXFbqEigSVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=qXFbqEigSVE" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/scWQEsJ0s-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=scWQEsJ0s-c" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/9vHjIwBj2Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=9vHjIwBj2Sk" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/BAlWZGW4lZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=BAlWZGW4lZY" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/w7I2jfZ55AA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=w7I2jfZ55AA" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>                           
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/LKAnoyxzafo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=LKAnoyxzafo" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/040TA2ycy-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=040TA2ycy-k" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                                <div class="carousel-item"> <iframe width="90%" height="91.875%" src="https://www.youtube.com/embed/WF592QnADSA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <p><a class="rm" href="https://www.youtube.com/watch?v=WF592QnADSA" target="_blank" rel="noopener noreferrer">Watch on YouTube...</a></p></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#watch" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#watch" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </span>
+                </center>
+            </div>
+        </section>
+        <section id="gallery">
+            <div>
+                <center>
+                    <span>
+                        <p class="start">Gallery- </p>
+                        <a href="https://media.istockphoto.com/photos/colorful-origami-paper-cranes-picture-id537074771?b=1&k=20&m=537074771&s=170667a&w=0&h=7l-uYqLqqNZEJ6-4KCNb_AuYZA-V2MBaIxFhEBzigNw=">
+                            <img class="rounded" src="https://media.istockphoto.com/photos/colorful-origami-paper-cranes-picture-id537074771?b=1&k=20&m=537074771&s=170667a&w=0&h=7l-uYqLqqNZEJ6-4KCNb_AuYZA-V2MBaIxFhEBzigNw=">
+                        </a>
+                        <a href="https://media.istockphoto.com/photos/paper-homemade-origami-rocket-picture-id915388390?b=1&k=20&m=915388390&s=170667a&w=0&h=G1Kl64BZ8wnaUQPinXEaXfjOzbJZFbhxcPDCtCQGzMU=">
+                            <img class="rounded" src="https://media.istockphoto.com/photos/paper-homemade-origami-rocket-picture-id915388390?b=1&k=20&m=915388390&s=170667a&w=0&h=G1Kl64BZ8wnaUQPinXEaXfjOzbJZFbhxcPDCtCQGzMU=">
+                        </a>
+                        <a href="https://media.istockphoto.com/photos/origami-boat-picture-id1323208070?b=1&k=20&m=1323208070&s=170667a&w=0&h=x4u7jZ_chvuMRPKVYjvpdgRkTnO-qnsnnwrSNpTRyNY=">
+                            <img class="rounded" src="https://media.istockphoto.com/photos/origami-boat-picture-id1323208070?b=1&k=20&m=1323208070&s=170667a&w=0&h=x4u7jZ_chvuMRPKVYjvpdgRkTnO-qnsnnwrSNpTRyNY=">
+                        </a>
+                        <a href="https://images.unsplash.com/photo-1574891934268-6287cda565b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8b3JpZ2FtaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                             <img class="rounded" src="https://images.unsplash.com/photo-1574891934268-6287cda565b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8b3JpZ2FtaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                        </a>
+                        <a href="https://media.istockphoto.com/photos/hand-holding-a-bouquet-of-origami-tulip-picture-id1310268939?b=1&k=20&m=1310268939&s=170667a&w=0&h=oQZ_wpM2ee_fUHCXM-Zb9wGTkwUtuKpSIS0XXhmchCw=">
+                            <img class="rounded" src="https://media.istockphoto.com/photos/hand-holding-a-bouquet-of-origami-tulip-picture-id1310268939?b=1&k=20&m=1310268939&s=170667a&w=0&h=oQZ_wpM2ee_fUHCXM-Zb9wGTkwUtuKpSIS0XXhmchCw=">
+                        </a>
+                        <a href="https://media.istockphoto.com/photos/origami-birds-blue-and-pink-symbolizing-love-and-romance-picture-id1309699921?b=1&k=20&m=1309699921&s=170667a&w=0&h=59iu6t--HYyNpsOwGHg6029dRXdvwAvlGXlHhNsUVXk=">
+                            <img class="rounded" src="https://media.istockphoto.com/photos/origami-birds-blue-and-pink-symbolizing-love-and-romance-picture-id1309699921?b=1&k=20&m=1309699921&s=170667a&w=0&h=59iu6t--HYyNpsOwGHg6029dRXdvwAvlGXlHhNsUVXk=">
+                        </a>
+                        <a href="https://media.istockphoto.com/photos/concept-woman-make-origami-easter-rabbit-from-color-paper-origami-picture-id1304167011?b=1&k=20&m=1304167011&s=170667a&w=0&h=SDUUnQyjXrefLhOIqiXALRsmxCIYzqTmxBXxBZy5EPE=">
+                            <img class="rounded" src="https://media.istockphoto.com/photos/concept-woman-make-origami-easter-rabbit-from-color-paper-origami-picture-id1304167011?b=1&k=20&m=1304167011&s=170667a&w=0&h=SDUUnQyjXrefLhOIqiXALRsmxCIYzqTmxBXxBZy5EPE=">
+                        </a>
+                        <a href="https://images.unsplash.com/photo-1597566833495-e4ad471783ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG9yaWdhbWl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                             <img class="rounded" src="https://images.unsplash.com/photo-1597566833495-e4ad471783ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG9yaWdhbWl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                        </a>
+                        <a href="https://images.unsplash.com/photo-1618251276954-60d95a0f9108?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fG9yaWdhbWl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                            <img class="rounded" src="https://images.unsplash.com/photo-1618251276954-60d95a0f9108?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fG9yaWdhbWl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                        </a>
+                    </span>
+                </center>
+            </div>
+        </section>
+        <section id="contact">
+            <div>
+                <center>
+                    <span>
+                        <p class="start">Contact- </p>
+                        <div>
+                            <address class="contact">
+                            Name- Binayak DattaPramanik<br>
+                            <a class="contact" href="mailto:superbinayakdattapramanik@gmail.com?Subject=Hello Origami Binayak">
+                               <i class="fa fa-envelope"></i>
+                               superbinayakdattapramanik@gmail.com
+                            </a><br>
+                            <a class="contact" href="tel:8850021762">
+                               <i class="fa fa-call"></i>
+                               Mobile Number- +91 8850021762
+                            </a><br>
+                            </address>
+                        </div>
+                    </span>
+                </center>
+            </div>
+        </section>
+        </div>
+        
+    </body>
+</html>
